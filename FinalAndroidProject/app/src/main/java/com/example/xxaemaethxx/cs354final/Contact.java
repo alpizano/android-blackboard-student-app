@@ -1,19 +1,10 @@
 package com.example.xxaemaethxx.cs354final;
 
 public class Contact {
-    int id;
     String Name;
     String Email;
     String Username;
     String Password;
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId () {
-        return this.id;
-    }
 
     public void setName(String name) {
         this.Name = name;
@@ -22,10 +13,10 @@ public class Contact {
         return this.Name;
     }
 
-    public void setPass(String pass) {
+    public void setPassword(String pass) {
         this.Password = pass;
     }
-    public String getPass() {
+    public String getPassword() {
         return this.Password;
     }
 

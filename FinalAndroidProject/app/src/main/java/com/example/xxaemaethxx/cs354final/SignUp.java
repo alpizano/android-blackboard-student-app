@@ -16,6 +16,10 @@ public class SignUp extends AppCompatActivity {
     private EditText ConfPassword;
     private Button SignUp;
 
+
+
+    DatabaseHelper helper = new DatabaseHelper(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,21 +31,27 @@ public class SignUp extends AppCompatActivity {
         Password = (EditText) findViewById(R.id.etPassword);
         ConfPassword = (EditText) findViewById(R.id.etConfPassword);
         SignUp = (Button) findViewById(R.id.btnSignUp);
-
-        String sName = Name.getText().toString();
-        String sEmail = Email.getText().toString();
-        String sUsername = Username.getText().toString();
-        String sPassword = Password.getText().toString();
-
     }
 
+    // stores Strings from text fields into variables
+    String sName = Name.getText().toString();
+    String sEmail = Email.getText().toString();
+    String sUsername = Username.getText().toString();
+    String sPassword = Password.getText().toString();
 
-    public void buttonPressed(View view){
-        if(Password.getText().toString().equals(ConfPassword.getText().toString())) {
-            Toast.makeText(this, "It matches!", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Toast.makeText(this, "Passwords do not match!", Toast.LENGTH_SHORT).show();
+        public void buttonPressed (View view){
+            if (Password.getText().toString().equals(ConfPassword.getText().toString())) {
+                //insert details into database
+                Contact c = new Contact();
+                c.setName(sName);
+                c.setEmail(sEmail);
+                c.setUsername(sUsername);
+                c.setPassword(sPassword);
+
+                helper.insertContact(c);
+            } else {
+                Toast.makeText(this, "Passwords do not match!", Toast.LENGTH_SHORT).show();
+            }
         }
     }
-}
+
