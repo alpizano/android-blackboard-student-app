@@ -62,9 +62,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Username and password don't match!", Toast.LENGTH_SHORT).show();
         }
 
-        Intent intent = new Intent(MainActivity.this, WelcomeScreen.class);
-        intent.putExtra("NAME", Name.getText().toString());
-        startActivity(intent);
+
     }
 
     public void signupPressed(View v) {

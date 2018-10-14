@@ -33,13 +33,16 @@ public class SignUp extends AppCompatActivity {
         SignUp = (Button) findViewById(R.id.btnSignUp);
     }
 
-    // stores Strings from text fields into variables
-    String sName = Name.getText().toString();
-    String sEmail = Email.getText().toString();
-    String sUsername = Username.getText().toString();
-    String sPassword = Password.getText().toString();
+
 
         public void buttonPressed (View view){
+
+            // stores Strings from text fields into variables, variables need be inside method
+            String sName = Name.getText().toString();
+            String sEmail = Email.getText().toString();
+            String sUsername = Username.getText().toString();
+            String sPassword = Password.getText().toString();
+
             if (Password.getText().toString().equals(ConfPassword.getText().toString())) {
                 //insert details into database
                 Contact c = new Contact();

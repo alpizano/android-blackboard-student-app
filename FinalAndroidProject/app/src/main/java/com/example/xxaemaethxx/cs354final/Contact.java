@@ -13,8 +13,8 @@ public class Contact {
         return this.Name;
     }
 
-    public void setPassword(String pass) {
-        this.Password = pass;
+    public void setPassword(String password) {
+        this.Password = password;
     }
     public String getPassword() {
         return this.Password;
