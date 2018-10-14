@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText Name;
     private EditText Password;
     private Button Login;
+    private Button SignUp;
     private TextView Info;
     private int counter = 5;
 
@@ -25,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         Name = (EditText) findViewById(R.id.etName);
         Password = (EditText) findViewById(R.id.etPassword);
         Login = (Button) findViewById(R.id.btnLogin);
+        SignUp = (Button) findViewById(R.id.btnSignUp);
         Info = (TextView) findViewById(R.id.tvInfo);
+
         Info.setText("Number of attempts remaining: 5");
 
         // creating onClickListener when login button is clicked to run validate method
@@ -36,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void signupPressed(View v) {
+        Intent intent = new Intent(MainActivity.this, SignUp.class);
+        startActivity(intent);
     }
 
         // validate method
