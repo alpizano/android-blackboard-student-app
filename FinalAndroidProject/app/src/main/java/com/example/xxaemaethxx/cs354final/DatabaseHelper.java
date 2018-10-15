@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+
     //database values
     private static final int DATABASE_VERSION = 4;
     private static final String DATABASE_NAME = "contacts.db";
@@ -18,11 +19,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_PASSWORD = "password";
     SQLiteDatabase db;
 
-    //contacts table
+    // contacts table
     private static final String TABLE_CREATE = " CREATE TABLE contacts (id integer primary key not null , " +
             "name text not null , email text not null , username text not null , password text not null);";
 
-    //constructor
+    // constructor
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -56,7 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public String searchPass(String username) {
-        // to read database
+        // to read from database
         db = this.getReadableDatabase();
 
         // needs space after FROM clause
