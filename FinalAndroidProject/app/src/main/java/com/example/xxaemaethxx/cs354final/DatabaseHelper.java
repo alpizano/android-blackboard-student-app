@@ -20,7 +20,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     SQLiteDatabase db;
 
     // contacts table
-    private static final String TABLE_CREATE = " CREATE TABLE contacts (id integer primary key not null , " +
+    private static final String CREATE_TABLE = " CREATE TABLE contacts (id integer primary key not null , " +
             "name text not null , email text not null , username text not null , password text not null);";
 
     // constructor
@@ -30,7 +30,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-    db.execSQL(TABLE_CREATE);
+    db.execSQL(CREATE_TABLE);
     this.db = db;
     }
 
