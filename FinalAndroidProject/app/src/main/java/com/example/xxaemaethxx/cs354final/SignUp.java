@@ -52,9 +52,16 @@ public class SignUp extends AppCompatActivity {
                 c.setPassword(sPassword);
 
                 helper.insertContact(c);
-            } else {
-                Toast.makeText(this, "Passwords do not match!", Toast.LENGTH_SHORT).show();
+                Name.setText("");
+                Email.setText("");
+                Username.setText("");
+                Password.setText("");
+                ConfPassword.setText("");
             }
+            else
+                {
+                Toast.makeText(this, "Passwords do not match!", Toast.LENGTH_SHORT).show();
+                }
         }
     }
 
