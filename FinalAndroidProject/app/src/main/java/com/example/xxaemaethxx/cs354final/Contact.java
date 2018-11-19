@@ -5,19 +5,22 @@ public class Contact {
     String Email;
     String Username;
     String Password;
+    String accountType; // for determinig admin or student account
 
     public void setName(String name) {
         this.Name = name;
     }
+
     public String getName() {
         return this.Name;
     }
 
-    public void setPassword(String password) {
-        this.Password = password;
+    public void setEmail(String email) {
+        this.Email = email;
     }
-    public String getPassword() {
-        return this.Password;
+
+    public String getEmail() {
+        return this.Email;
     }
 
     public void setUsername(String username) {
@@ -28,10 +31,15 @@ public class Contact {
         return this.Username;
     }
 
-    public void setEmail(String email) {
-        this.Email = email;
+    public void setPassword(String password) {
+        this.Password = password;
     }
-    public String getEmail() {
-        return this.Email;
+
+    public String getPassword() {
+        return this.Password;
     }
+
+
+
+
 }
